@@ -1,4 +1,4 @@
-# Definizione provaaaaa
+# Definizione
 
 La definizione dell'elaborato dovrà affrontare i seguenti punti:
 - identificazione dei bisogni esposti nella traccia
