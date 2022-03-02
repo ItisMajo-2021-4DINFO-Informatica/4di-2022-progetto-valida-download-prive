@@ -1,7 +1,7 @@
 # Definizione
 
 ## 1. *Bisogni* esposti nella traccia:
-  
+> ciao
 
 ## 2. *Risposte* tecnologiche ai bisogni individuati:
 
