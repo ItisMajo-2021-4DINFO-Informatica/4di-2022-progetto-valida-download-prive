@@ -11,7 +11,7 @@
 > Per lo sviluppo di questa applicazione utilizzeremo il software "Visual Studio" che ci permetterà, senza bisogna di elementi aggiuntivi, di inserire  delle stringhe mediante l'interfaccia wpf e compararle attraverso dei metodi già presenti nell'ambiente di sviluppo.
 > Per l'apertura del file system da cui selezionare un file useremo una classe presente nella libreria "using Microsoft.Win32", denominata          "OpenFileDialog".
 > Il calcolo del checksum SHA256 di un file lo otterremo con l'inserimento della libreria "using System.Security.Cryptography", che contiene tutti gli elementi necessari alla risoluzione del nostro problema.
-> La verifica della firma digitale di un file verrà risolta mediante l'uso 
+> 
 
 
 ## 3. *Gap* di conoscenza rilevati nei membri del gruppo:
@@ -21,5 +21,8 @@
 
 
 ## 4. *Informazioni* che si useranno per rispondere ai bisogni e colmare i gap di conoscenza:
-
+> Per rispondere ai bisogni trovati e ai gap di conoscenza utilizzeremo le seguenti fonti:
+> - https://docs.microsoft.com/it-it/dotnet/api/system.security.cryptography.hashalgorithm.computehash?view=net-6.0;
+> - https://docs.microsoft.com/it-it/dotnet/api/system.windows.forms.openfiledialog?view=windowsdesktop-6.0;
+> - https://docs.microsoft.com/it-it/dotnet/api/system.security.cryptography.rsacryptoserviceprovider.verifydata?view=net-6.0
 
