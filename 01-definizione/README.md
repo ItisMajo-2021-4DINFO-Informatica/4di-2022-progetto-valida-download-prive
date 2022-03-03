@@ -8,7 +8,7 @@
 > - In caso di esito positivo dei controlli indicarlo all'utente, altrimenti segnalare gli errori identificati.
 
 ## 2. *Risposte* tecnologiche ai bisogni individuati:
-> Per lo sviluppo di questa applicazione utilizzeremo il software "Visual Studio" che ci permetterà, senza bisogna di elementi aggiuntivi, di inserire  delle stringhe mediante l'interfaccia wpf e compararle attraverso dei metodi già presenti nell'ambiente di sviluppo.
+> Per lo sviluppo di questa applicazione utilizzeremo il software "Visual Studio" che ci permetterà, senza bisogno di elementi aggiuntivi, di inserire  delle stringhe mediante l'interfaccia wpf e compararle attraverso dei metodi già presenti nell'ambiente di sviluppo.
 > Per l'apertura del file system da cui selezionare un file useremo una classe presente nella libreria "using Microsoft.Win32", denominata "OpenFileDialog".
 > Il calcolo del checksum SHA256 di un file lo otterremo con l'inserimento della libreria "using System.Security.Cryptography", che contiene tutti gli elementi necessari alla risoluzione del nostro problema.
 > Sempre tramite l'utilizzo di quest'ultima libreria, controlleremo le chiavi pubbliche per verificare la firma digitale del file con il metodo "RSACryptoServiceProvider".
