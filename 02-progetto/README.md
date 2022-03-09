@@ -7,7 +7,8 @@
 > Il lavoro che andremo a svolgere verrà suddiviso principalmente in 3 fasi:
 > - Fase 1 (Interfaccia wpf): Eseguita da Rughetta Mattia, usufruendo di 2 ore in laboratorio.
 > - Fase 2 (Calcolo del cheksum SHA256): Eseguito da Cancemi Gabriele con l'aiuto del gruppo, servendosi di 4 ore in laboratorio.
-> - Fase 3 (Controllo della firma digitale): Eseguito da Soudqi Nizar, aiutato dal resto del gruppo, beneficiando di 4 ore in laboratorio. <br/>
+> - Fase 3 (Controllo della firma digitale): Eseguito da Soudqi Nizar, aiutato dal resto del gruppo, beneficiando di 4 ore in laboratorio.
+> 
 > Complessivamente il lavoro dovrebbe essere completato entro il 01/04/2022.
 
 ## 3. *Documentazione* del processo di realizzazione:
