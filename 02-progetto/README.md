@@ -1,6 +1,10 @@
 # Progetto
 
-## 1. *Progetto* inziale e realizzazione della soluzione:
+## 1. *Progetto* iniziale:
+> L'applicazione che andremo a creare eseguirà una serie di controlli che permetteranno di stabilire se un file scaricato da Internet è stato manomesso.
+> Il primo step consisterà nell'inserimento da parte dell'utente del checksum SHA256 all'interno di un TextBox, il quale verrà confrontato con il checksum del file importato calcolato dalla nostra applicazione.
+> In caso di uguaglianza dei due SHA256 verrà richiesto l'inserimento della chiave pubblica con cui si decripterà il file contenente il checksum criptato, in modo da verificare la firma digitale tramite la corrispondenza tra i due codici.
+> In caso di tutti i controlli superati il programma emanerà un messaggio di successo, viceversa verranno segnalati gli errori riscontrati.
 
 
 ## 2. *Organizzazione* e suddivisione del lavoro:
