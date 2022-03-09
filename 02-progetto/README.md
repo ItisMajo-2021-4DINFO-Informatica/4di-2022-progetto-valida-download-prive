@@ -19,5 +19,6 @@
 > Per ogni commit inseriremo un titolo e una sintesi del lavoro svolto, in modo da tener traccia di ogni progresso.
 
 ## 4. *Collegamenti* e relazioni tra ciò che si sta realizzando e le informazioni di riferimento:
->
+> Materie: sistemi e reti, tpsit
+> Teoria: Checksum
 
