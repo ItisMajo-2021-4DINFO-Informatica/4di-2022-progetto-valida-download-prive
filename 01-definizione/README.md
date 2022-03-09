@@ -18,7 +18,7 @@
 > - Utilizzo del metodo "OpenFileDialog" per la selezione di un determinato file;
 > - Calcolo del checksum SHA256 di un file ("using System.Security.Cryptography");
 > - Controllo della firma digitale con il metodo "RSACryptoServiceProvider".
-
+ 
 
 ## 4. *Informazioni* che si useranno per rispondere ai bisogni e colmare i gap di conoscenza:
 > Per rispondere ai bisogni trovati e ai gap di conoscenza utilizzeremo le seguenti fonti:
