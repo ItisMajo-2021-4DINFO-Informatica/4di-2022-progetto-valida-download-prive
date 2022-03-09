@@ -1,9 +1,11 @@
 # Progetto
 
-Il progetto dell'elaborato dovrà affrontare i seguenti punti:
-- stesura del progetto iniziale, racconto di come si andrà a realizzare la soluzione
-- organizzazione del lavoro, suddivisione della realizzazione in fasi, stima della durata e ruoli dei membri del gruppo
-- ducumantazione del processo di realizzazione, attraverso appunti e commenti significativi alle versioni rilasciate su GitHub (commit)
-- documentazione dei collegamenti e relazioni tra ciò che si sta realizzando e le informazioni di riferimento (teoria della materia, altre materie, soluzioni già esistenti)
+## 1. *Progetto* inziale e realizzazione della soluzione:
+> 
+## 2. *Organizzazione* del lavoro, suddivisione della realizzazione in fasi, stima della durata e ruoli dei membri del gruppo:
+>
+## 3. *Documentazione* del processo di realizzazione:
+>
+## 4. *Collegamenti* e relazioni tra ciò che si sta realizzando e le informazioni di riferimento:
+>
 
-Puoi editare questo file per creare il tuo documento di progetto oppure aggiungere un altro file in questa cartella. In ogni caso il documento deve essere un file di testo formattato con il linguaggio Markdown.
