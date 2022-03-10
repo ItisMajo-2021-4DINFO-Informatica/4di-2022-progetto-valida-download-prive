@@ -11,14 +11,19 @@
 > - Fase 1 (Interfaccia wpf): Eseguita da Rughetta Mattia, usufruendo di 2 ore in laboratorio.
 > - Fase 2 (Calcolo del cheksum SHA256): Eseguito da Cancemi Gabriele con l'aiuto del gruppo, servendosi di 4 ore in laboratorio.
 > - Fase 3 (Controllo della firma digitale): Eseguito da Soudqi Nizar, aiutato dal resto del gruppo, beneficiando di 4 ore in laboratorio.
+> - Fase 4 (Check-up finale del prodotto): Eseguito da tutti i membri del gruppo, in 1 ora di laboratorio.
 > 
-> Complessivamente il lavoro dovrebbe essere completato entro il 01/04/2022.
+> Ipoteticamente il lavoro dovrebbe essere completato entro il 06/04/2022.
 
 ## 3. *Documentazione* del processo di realizzazione:
 > Per la documentazione del processo di realizzazione utilezzeremo il software "GitHub" e la relativa applicazione "GitHub Desktop", all'interno dei quali andremo a descrivere ogni modifica effettuata al progetto utilizzando i "Commit".
 > Per ogni commit inseriremo un titolo e una sintesi del lavoro svolto, in modo da tener traccia di ogni progresso.
 
 ## 4. *Collegamenti* e relazioni tra ciò che si sta realizzando e le informazioni di riferimento:
-> Materie: sistemi e reti, tpsit
-> Teoria: Checksum
+> Il progetto che andremo a realizzare tratterà argomenti collegati ad altre materie:
+> - Sistemi e reti - Protocollo PGP che viene utilizzato per inviare messaggi crittografati tra due persone mediante l'utilizzo di una chiave pubblica legata a un utente specifico.
+> - Tpsit - Calcolo del checksum, ovvero una sequenza di 64 cifre esadecimali che viene utilizzata per verificare l'integrità di un file. In caso di modifica di anche un solo bit del documento, il checksum risulterà completamente diverso rispetto al precedente potendo così identificare un'eventuale manomissione.
+> - Telecomunicazioni - Commutazione di un pacchetto, tecnica che prevede la suddivisione di un messaggio in più parti (pacchetti), prima di inoltrarlo attraverso un percorso non definito. Ogni dato seguirà una propria strada prima di raggiungere il destinatario, rendendo così possibili delle azioni di modifica del documento durante la trasmissione.
+> 
+> Teoria: Checksum, classi c#
 
