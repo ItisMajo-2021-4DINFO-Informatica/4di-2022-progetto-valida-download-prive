@@ -23,7 +23,7 @@
 > Il progetto che andremo a realizzare tratterà argomenti collegati ad altre materie:
 > - Sistemi e reti - Protocollo PGP che viene utilizzato per inviare messaggi crittografati tra due persone mediante l'utilizzo di una chiave pubblica legata a un utente specifico;
 >
-> ![PGP](Chiave PGP.png)
+> ![PGP](PGP.png)
 >
 > - Tpsit - Calcolo del checksum, ovvero una sequenza di 64 cifre esadecimali che viene utilizzata per verificare l'integrità di un file. In caso di modifica di anche un solo bit del documento, il checksum risulterà completamente diverso rispetto al precedente potendo così identificare un'eventuale manomissione;
 >
