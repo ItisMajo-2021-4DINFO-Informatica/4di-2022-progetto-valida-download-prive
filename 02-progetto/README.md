@@ -32,5 +32,9 @@
 > https://8gwifi.org/pgpencdec.jsp
 > 
 > La nostra applicazione unirà il funzionamento di entrambi i software, al fine di eseguire tutti i controlli utilizzando un'unica piattaforma.
-> Teoria: Checksum, classi c#
+> 
+> Gli argomenti trattati in teoria che verranno ripresi nella creazione di questa applicazione sono principalmente:
+> - Metodi - Utilizzo di codice già presente in Visual Studio, scritto da altri programmatori (Es. decriptazione con chiave PGP);
+> - Checksum SHA256 - Verifica l'integrità di un file. Nel nostro progetto deve essere calcolato dal programma.
+> - Chiavi asimmetriche - Utilizzte per la comunicazione sicura tra due parti. In paricolare noi utilizzeremo solo la chiave pubblica che ci permetterà di decifrare un codice cifrato dal proprietario mediante la chiave privata.
 
