@@ -22,6 +22,9 @@
 ## 4. *Collegamenti* e relazioni tra ciò che si sta realizzando e le informazioni di riferimento:
 > Il progetto che andremo a realizzare tratterà argomenti collegati ad altre materie:
 > - Sistemi e reti - Protocollo PGP che viene utilizzato per inviare messaggi crittografati tra due persone mediante l'utilizzo di una chiave pubblica legata a un utente specifico;
+
+![PGP](pgp_title.png)
+
 > - Tpsit - Calcolo del checksum, ovvero una sequenza di 64 cifre esadecimali che viene utilizzata per verificare l'integrità di un file. In caso di modifica di anche un solo bit del documento, il checksum risulterà completamente diverso rispetto al precedente potendo così identificare un'eventuale manomissione;
 > - Telecomunicazioni - Commutazione di un pacchetto, tecnica che prevede la suddivisione di un messaggio in più parti (pacchetti), prima di inoltrarlo attraverso un percorso non definito. Ogni dato seguirà una propria strada prima di raggiungere il destinatario, rendendo così possibili delle azioni di modifica del documento durante la trasmissione.
 >
