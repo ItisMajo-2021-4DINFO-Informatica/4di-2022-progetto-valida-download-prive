@@ -36,8 +36,7 @@
 > Esistono sul web molti siti che permettono di calcolare l'SHA256 di un file importato dal pc. In particolare per la realizzazione del nostro progetto utilizzeremo come base di riferimento la seguente pagina: 
 > https://emn178.github.io/online-tools/sha256.html
 > 
-> Per quanto riguarda il controllo della firma digitale abbiamo trovato il seguente sito che permette la criptazione e la decriptazione di un testo mediante l'utlizzo della chiave pubblica PGP:
-> https://8gwifi.org/pgpencdec.jsp
+> Per quanto riguarda il controllo della firma digitale abbiamo trovato il seguente [sito](https://8gwifi.org/pgpencdec.jsp) che permette la criptazione e la decriptazione di un testo mediante l'utlizzo della chiave pubblica PGP.
 > 
 > La nostra applicazione unirà il funzionamento di entrambi i software, al fine di eseguire tutti i controlli utilizzando un'unica piattaforma.
 > 
