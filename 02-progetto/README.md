@@ -8,9 +8,9 @@
 
 ## 2. *Organizzazione* e suddivisione del lavoro:
 > Il lavoro che andremo a svolgere verrà suddiviso principalmente in 3 fasi:
-> - Fase 1 (Interfaccia wpf): Eseguita da Rughetta Mattia, usufruendo di 2 ore in laboratorio.
-> - Fase 2 (Calcolo del cheksum SHA256): Eseguito da Cancemi Gabriele con l'aiuto del gruppo, servendosi di 4 ore in laboratorio.
-> - Fase 3 (Controllo della firma digitale): Eseguito da Soudqi Nizar, aiutato dal resto del gruppo, beneficiando di 4 ore in laboratorio.
+> - Fase 1 (Interfaccia wpf): Eseguita da Rughetta Mattia, usufruendo di 2 ore in laboratorio;
+> - Fase 2 (Calcolo del cheksum SHA256): Eseguito da Cancemi Gabriele con l'aiuto del gruppo, servendosi di 4 ore in laboratorio;
+> - Fase 3 (Controllo della firma digitale): Eseguito da Soudqi Nizar, aiutato dal resto del gruppo, beneficiando di 4 ore in laboratorio;
 > - Fase 4 (Check-up finale del prodotto): Eseguito da tutti i membri del gruppo, in 1 ora di laboratorio.
 > 
 > Ipoteticamente il lavoro dovrebbe essere completato entro il 06/04/2022.
@@ -21,8 +21,8 @@
 
 ## 4. *Collegamenti* e relazioni tra ciò che si sta realizzando e le informazioni di riferimento:
 > Il progetto che andremo a realizzare tratterà argomenti collegati ad altre materie:
-> - Sistemi e reti - Protocollo PGP che viene utilizzato per inviare messaggi crittografati tra due persone mediante l'utilizzo di una chiave pubblica legata a un utente specifico.
-> - Tpsit - Calcolo del checksum, ovvero una sequenza di 64 cifre esadecimali che viene utilizzata per verificare l'integrità di un file. In caso di modifica di anche un solo bit del documento, il checksum risulterà completamente diverso rispetto al precedente potendo così identificare un'eventuale manomissione.
+> - Sistemi e reti - Protocollo PGP che viene utilizzato per inviare messaggi crittografati tra due persone mediante l'utilizzo di una chiave pubblica legata a un utente specifico;
+> - Tpsit - Calcolo del checksum, ovvero una sequenza di 64 cifre esadecimali che viene utilizzata per verificare l'integrità di un file. In caso di modifica di anche un solo bit del documento, il checksum risulterà completamente diverso rispetto al precedente potendo così identificare un'eventuale manomissione;
 > - Telecomunicazioni - Commutazione di un pacchetto, tecnica che prevede la suddivisione di un messaggio in più parti (pacchetti), prima di inoltrarlo attraverso un percorso non definito. Ogni dato seguirà una propria strada prima di raggiungere il destinatario, rendendo così possibili delle azioni di modifica del documento durante la trasmissione.
 >
 > Esistono sul web molti siti che permettono di calcolare l'SHA256 di un file importato dal pc. In particolare per la realizzazione del nostro progetto utilizzeremo come base di riferimento la seguente pagina: 
@@ -35,6 +35,6 @@
 > 
 > Gli argomenti trattati in teoria che verranno ripresi nella creazione di questa applicazione sono principalmente:
 > - Metodi - Utilizzo di codice già presente in Visual Studio, scritto da altri programmatori (Es. decriptazione con chiave PGP);
-> - Checksum SHA256 - Verifica l'integrità di un file. Nel nostro progetto deve essere calcolato dal programma.
+> - Checksum SHA256 - Verifica l'integrità di un file. Nel nostro progetto deve essere calcolato dal programma;
 > - Chiavi asimmetriche - Utilizzte per la comunicazione sicura tra due parti. In paricolare noi utilizzeremo solo la chiave pubblica che ci permetterà di decifrare un codice cifrato dal proprietario mediante la chiave privata.
 
