@@ -22,7 +22,7 @@
 
 ## 4. *Informazioni* che si useranno per rispondere ai bisogni e colmare i gap di conoscenza:
 > Per rispondere ai bisogni trovati e ai gap di conoscenza utilizzeremo le seguenti fonti:
-> - Calcolo checksum SHA256: https://docs.microsoft.com/it-it/dotnet/api/system.security.cryptography.hashalgorithm.computehash?view=net-6.0 
-> - Utilizzo "OpenFileDialog": https://docs.microsoft.com/it-it/dotnet/api/system.windows.forms.openfiledialog?view=windowsdesktop-6.0 
-> - Metodo "RSACryptoServiceProvider": https://docs.microsoft.com/it-it/dotnet/api/system.security.cryptography.rsacryptoserviceprovider.verifydata?view=net-6.0        
+> - Calcolo [checksum SHA256](https://docs.microsoft.com/it-it/dotnet/api/system.security.cryptography.hashalgorithm.computehash?view=net-6.0).
+> - Utilizzo ["OpenFileDialog"](https://docs.microsoft.com/it-it/dotnet/api/system.windows.forms.openfiledialog?view=windowsdesktop-6.0).
+> - Metodo ["RSACryptoServiceProvider"](https://docs.microsoft.com/it-it/dotnet/api/system.security.cryptography.rsacryptoserviceprovider.verifydata?view=net-6.0).    
 
