@@ -9,7 +9,10 @@
 ## 2. *Organizzazione* e suddivisione del lavoro:
 > Il lavoro che andremo a svolgere verrà suddiviso principalmente in 3 fasi:
 > - **Fase 1** (Interfaccia wpf): Eseguita da Rughetta Mattia, usufruendo di 2 ore in laboratorio;
-> In questa fase verrà realizzata la pagina che interfaccerà l'utente all'applicazione.
+> In questa fase verrà realizzata la pagina che interfaccerà l'utente all'applicazione. Essa conterrà un "OpenFileDialog" per la selezione del file; Tre "TextBox" per l'inserimento dei dati rischiesti; Una "ProgressBar" per verificare l'avanzamento; un "Button" per l'esecuzione e un "Label" per la stampa del risultato.
+> L'interfaccia avrà il seguente aspetto:
+> 
+> ![Interfaccia](Interfaccia.png)
 >  
 > - **Fase 2** (Calcolo del cheksum SHA256): Eseguito da Cancemi Gabriele con l'aiuto del gruppo, servendosi di 4 ore in laboratorio;
 > Scriveremo il codice che calcolerà il checksum SHA256 del file che l'utente inserirà in input.  
