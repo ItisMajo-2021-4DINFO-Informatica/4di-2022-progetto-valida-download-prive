@@ -8,10 +8,21 @@
 
 ## 2. *Organizzazione* e suddivisione del lavoro:
 > Il lavoro che andremo a svolgere verrà suddiviso principalmente in 3 fasi:
-> - **Fase 1** (Interfaccia wpf): Eseguita da Rughetta Mattia, usufruendo di 2 ore in laboratorio;
+> - **Fase 1** (Interfaccia wpf): Eseguita da Rughetta Mattia, usufruendo di 2 ore in laboratorio; 
+> 
+> In questa fase verrà realizzata la pagina che interfaccerà l'utente all'applicazione.
+>  
 > - **Fase 2** (Calcolo del cheksum SHA256): Eseguito da Cancemi Gabriele con l'aiuto del gruppo, servendosi di 4 ore in laboratorio;
+> 
+> Scriveremo il codice che calcolerà il checksum SHA256 del file che l'utente inserirà in input.  
+> 
 > - **Fase 3** (Controllo della firma digitale): Eseguito da Soudqi Nizar, aiutato dal resto del gruppo, beneficiando di 4 ore in laboratorio;
+> 
+> Decifreremo il checksum criptato che l'utente inserirà in input con la chiave pubblica fornita e andremo a confrontare i due codici in modo da ricavare l'eventuale autenticità del file firmato.
+> 
 > - **Fase 4** (Check-up finale del prodotto): Eseguito da tutti i membri del gruppo, in 1 ora di laboratorio.
+> 
+> Controlleremo il totale funzionamento dell'applicazione, correggendo eventuali errori. 
 > 
 > Ipoteticamente il lavoro dovrebbe essere completato entro il 06/04/2022.
 
