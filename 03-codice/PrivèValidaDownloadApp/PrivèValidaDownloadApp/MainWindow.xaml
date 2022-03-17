@@ -5,8 +5,16 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PrivèValidaDownloadApp"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="" Height="671" Width="1100" ResizeMode="NoResize">
+    <Window.Background>
+        <ImageBrush ImageSource="/background.png"/>
+    </Window.Background>
+    <Window.OpacityMask>
+        <ImageBrush ImageSource="/sfondo.png"/>
+    </Window.OpacityMask>
     <Grid>
+        <Label x:Name="LblTitolo" Content="Safety" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Foreground="White" FontSize="36" FontFamily="Cooper Black"/>
+        <Button x:Name="BtnEsegui" Content="Esegui" HorizontalAlignment="Left" Margin="936,579,0,0" VerticalAlignment="Top" Background="#FF00A2E8" Foreground="White" BorderBrush="#FF00A2E8" FontFamily="Cooper Black" FontSize="32"/>
 
     </Grid>
 </Window>
