@@ -7,11 +7,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="back.png" />
     <None Remove="background.png" />
     <None Remove="sfondo.png" />
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="back.png" />
     <Resource Include="background.png" />
     <Resource Include="sfondo.png" />
   </ItemGroup>

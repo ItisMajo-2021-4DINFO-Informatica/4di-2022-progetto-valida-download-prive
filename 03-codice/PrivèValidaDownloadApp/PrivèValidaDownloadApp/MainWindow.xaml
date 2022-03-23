@@ -7,14 +7,12 @@
         mc:Ignorable="d"
         Title="" Height="671" Width="1100" ResizeMode="NoResize">
     <Window.Background>
-        <ImageBrush ImageSource="/background.png"/>
+        <ImageBrush ImageSource="/back.png"/>
     </Window.Background>
-    <Window.OpacityMask>
-        <ImageBrush ImageSource="/sfondo.png"/>
-    </Window.OpacityMask>
+    
     <Grid>
         <Label x:Name="LblTitolo" Content="Safety" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Foreground="White" FontSize="36" FontFamily="Cooper Black"/>
-        <Button x:Name="BtnEsegui" Content="Esegui" HorizontalAlignment="Left" Margin="936,579,0,0" VerticalAlignment="Top" Background="#FF00A2E8" Foreground="White" BorderBrush="#FF00A2E8" FontFamily="Cooper Black" FontSize="32"/>
+        <Button x:Name="BtnEsegui" Content="Esegui" HorizontalAlignment="Left" Margin="570,568,0,0" VerticalAlignment="Top" Background="#FF00A2E8" Foreground="White" BorderBrush="#FF00A2E8" FontFamily="Cooper Black" FontSize="32" BorderThickness="0,1,1,1" Padding="10,10,10,10"/>
 
     </Grid>
 </Window>
