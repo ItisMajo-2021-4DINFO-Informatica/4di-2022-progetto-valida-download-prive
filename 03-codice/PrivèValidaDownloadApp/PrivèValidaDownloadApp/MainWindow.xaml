@@ -184,7 +184,8 @@
         <ProgressBar HorizontalAlignment="Center" Height="15" Margin="0,591,0,0" VerticalAlignment="Top" Width="768" BorderThickness="2,2,2,2" BorderBrush="#FF00A8F3" Background="White"/>
         <TextBlock x:Name="TbRisultato" HorizontalAlignment="Left" Margin="940,135,0,0" Text="Il tuo file è sicuro!" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="White" FontFamily="Cooper Black" FontSize="55" Width="230" Height="306"/>
         <Label x:Name="LblImporta" Content="Importa il tuo file (.iso)" HorizontalAlignment="Left" Margin="216,188,0,0" VerticalAlignment="Top" Foreground="White" FontFamily="Cooper Black" FontSize="36"/>
-        <Button Style="{DynamicResource RoundButtonStyle2}" x:Name="BtnImporta" Content="Importa" HorizontalAlignment="Left" Margin="352,291,0,0" VerticalAlignment="Top" Background="White" BorderBrush="White" Foreground="#FF00A8F3" FontFamily="Cooper Black" FontSize="36" BorderThickness="2,3,2,2" Padding="10,10,10,10"/>
+        <Button Style="{DynamicResource RoundButtonStyle2}" x:Name="BtnImporta" Content="Importa" HorizontalAlignment="Left" Margin="352,291,0,0" VerticalAlignment="Top" Background="White" BorderBrush="White" Foreground="#FF00A8F3" FontFamily="Cooper Black" FontSize="36" BorderThickness="2,3,2,2" Padding="10,10,10,10" Click="BtnImporta_Click"/>
+        <Label x:Name="lblFile" Content="Nessun file selezionato" HorizontalAlignment="Left" Margin="13,357,0,0" VerticalAlignment="Top" FontFamily="Cooper Black" Background="{x:Null}" Foreground="White" FontSize="22" FontStyle="Italic" HorizontalContentAlignment="Center" Width="854"/>
 
     </Grid>
 </Window>

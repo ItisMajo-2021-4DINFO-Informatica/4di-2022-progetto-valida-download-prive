@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Microsoft.Win32;
+using System.IO;
 
 namespace PrivèValidaDownloadApp
 {
@@ -25,6 +27,17 @@ namespace PrivèValidaDownloadApp
             InitializeComponent();
         }
 
-      
+        private void BtnImporta_Click(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Multiselect = true;
+            openFileDialog.Filter = "(*.iso)|*.iso";
+            openFileDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+            if (openFileDialog.ShowDialog() == true)
+            {
+                foreach (string filename in openFileDialog.FileNames)
+                lblFile.Content = System.IO.Path.GetFileName(filename);
+            }
+        }
     }
 }
