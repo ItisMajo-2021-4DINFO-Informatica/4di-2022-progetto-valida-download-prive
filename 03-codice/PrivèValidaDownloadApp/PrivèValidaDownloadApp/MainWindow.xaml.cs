@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Microsoft.Win32;
 using System.IO;
+using System.Security.Cryptography;
 
 namespace PrivèValidaDownloadApp
 {
@@ -52,19 +53,34 @@ namespace PrivèValidaDownloadApp
                 if (openFileDialog.ShowDialog() == true)
                 {
                     foreach (string filename in openFileDialog.FileNames)
+                    {
                         lblFile.Content = System.IO.Path.GetFileName(filename);
+                        uno[1] = System.IO.Path.GetFileName(filename);
+                    }
                 }
             }
             
             
         }
 
+
+        public string SHA256CheckSum(string filePath)
+        {
+            using (SHA256 sHA256 = SHA256.Create())
+            {
+                using (FileStream lettore = File.OpenRead(filePath))
+                {
+                    return BitConverter.ToString(sHA256.ComputeHash(lettore));
+                }
+            }
+        }
+
         private void BtnAvanti_Click(object sender, RoutedEventArgs e)
         {
             if(BtnAvanti.Content == "Esegui")
             {
-                
-                
+                MessageBox.Show(SHA256CheckSum(uno[1]));
+                     
                 
                 lblIndice.Content = "Fine";
                 BtnAvanti.IsEnabled = false;
