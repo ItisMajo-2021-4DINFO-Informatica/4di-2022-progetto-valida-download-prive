@@ -26,12 +26,14 @@ namespace PrivèValidaDownloadApp
         String[] uno = { "Seleziona il tuo file (.iso)", "Nessun file selezionato" };
         String[] due = { "Seleziona il tuo file (.sha256)", "Nessun file selezionato" };
         String[] tre = { "Seleziona il tuo file (.asc)", "Nessun file selezionato" };
+        sha256 SHA256;
 
 
 
         public MainWindow()
         {
             InitializeComponent();
+            SHA256 = new sha256();
 
         }
 
@@ -39,47 +41,60 @@ namespace PrivèValidaDownloadApp
         {
             if(BtnImporta.Content == "Ripristina")
             {
+                uno[1] = "Nessun file selezionato";
+                due[1] = "Nessun file selezionato";
+                tre[1] = "Nessun file selezionato";
                 PaginaPrima();
                 BtnAvanti.IsEnabled = true;
                 BtnAvanti.Content = "Avanti";
                 BtnImporta.Content = "Seleziona";
+                
+
+
             }
             else
             {
-                OpenFileDialog openFileDialog = new OpenFileDialog();
-                openFileDialog.Multiselect = true;
-                openFileDialog.Filter = "(*.iso)|*.iso";
-                openFileDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
-                if (openFileDialog.ShowDialog() == true)
+                Microsoft.Win32.OpenFileDialog openFile = new Microsoft.Win32.OpenFileDialog();
+                string percorso =   SHA256.openExplorer(openFile);
+                string pagina = (string)lblIndice.Content;
                 {
-                    foreach (string filename in openFileDialog.FileNames)
+                    if(pagina == "1/3")
                     {
-                        lblFile.Content = System.IO.Path.GetFileName(filename);
-                        uno[1] = System.IO.Path.GetFileName(filename);
+                        uno[1] = percorso;
+                        lblFile.Content = percorso;
+
+
+                    }
+                    else if(pagina == "2/3")
+                    {
+                        due[1] = percorso;
+                        lblFile.Content = percorso;
+
+
+                    }
+                    else if(pagina == "3/3")
+                    {
+                        tre[1] = percorso;
+                        lblFile.Content = percorso;
+
                     }
                 }
+
+
+
             }
-            
-            
+
+
         }
 
+        
 
-        public string SHA256CheckSum(string filePath)
-        {
-            using (SHA256 sHA256 = SHA256.Create())
-            {
-                using (FileStream lettore = File.OpenRead(filePath))
-                {
-                    return BitConverter.ToString(sHA256.ComputeHash(lettore));
-                }
-            }
-        }
-
+       
         private void BtnAvanti_Click(object sender, RoutedEventArgs e)
         {
             if(BtnAvanti.Content == "Esegui")
             {
-                MessageBox.Show(SHA256CheckSum(uno[1]));
+                MessageBox.Show(SHA256.SHA256CheckSum(uno[1]));
                      
                 
                 lblIndice.Content = "Fine";
@@ -95,17 +110,18 @@ namespace PrivèValidaDownloadApp
 
 
             string pagina = (string)lblIndice.Content;
-           if(pagina == "1.")
+           if(pagina == "1/3")
             {
-                lblIndice.Content = "2.";
+                lblIndice.Content = "2/3";
                 LblImporta.Content = due[0];
                 lblFile.Content = due[1];
                 pbProgress.Value = 33;
                 BtnIndietro.IsEnabled = true;
+
            }
-           if(pagina == "2.")
+           if(pagina == "2/3")
             {
-                lblIndice.Content = "3.";
+                lblIndice.Content = "3/3";
                 LblImporta.Content = tre[0];
                 lblFile.Content = tre[1];
                 pbProgress.Value = 66;
@@ -119,7 +135,7 @@ namespace PrivèValidaDownloadApp
 
         public void PaginaPrima()
         {
-            lblIndice.Content = "1.";
+            lblIndice.Content = "1/3";
             LblImporta.Content = uno[0];
             lblFile.Content = uno[1];
             pbProgress.Value = 0;
@@ -131,13 +147,13 @@ namespace PrivèValidaDownloadApp
         {
             string pagina = (string)lblIndice.Content;
 
-            if (pagina == "2.")
+            if (pagina == "2/3")
             {
                 PaginaPrima();
             }
-            if (pagina == "3.")
+            if (pagina == "3/3")
             {
-                lblIndice.Content = "2.";
+                lblIndice.Content = "2/3";
                 LblImporta.Content = due[0];
                 lblFile.Content = due[1];
                 pbProgress.Value = 33;
