@@ -55,11 +55,11 @@ namespace PrivèValidaDownloadApp
             else
             {
                 Microsoft.Win32.OpenFileDialog openFile = new Microsoft.Win32.OpenFileDialog();
-                string percorso =   SHA256.openExplorer(openFile);
                 string pagina = (string)lblIndice.Content;
                 {
                     if(pagina == "1/3")
                     {
+                        string percorso = SHA256.openExplorer1(openFile);
                         uno[1] = percorso;
                         lblFile.Content = percorso;
 
@@ -67,6 +67,8 @@ namespace PrivèValidaDownloadApp
                     }
                     else if(pagina == "2/3")
                     {
+                        string percorso = SHA256.openExplorer2(openFile);
+
                         due[1] = percorso;
                         lblFile.Content = percorso;
 
@@ -74,6 +76,8 @@ namespace PrivèValidaDownloadApp
                     }
                     else if(pagina == "3/3")
                     {
+                        string percorso = SHA256.openExplorer3(openFile);
+
                         tre[1] = percorso;
                         lblFile.Content = percorso;
 
@@ -94,16 +98,33 @@ namespace PrivèValidaDownloadApp
         {
             if(BtnAvanti.Content == "Esegui")
             {
-                MessageBox.Show(SHA256.SHA256CheckSum(uno[1]));
-                     
+               
+                if(uno[1] != "Nessun file selezionato" && due[1] != "Nessun file selezionato" && tre[1] != "Nessun file selezionato")
+                {
+                    string sha256 = (SHA256.SHA256CheckSum(uno[1]));
+                    MessageBox.Show(sha256);
+                    bool uguale = SHA256.ControlloValori(sha256, due[1]);
+                    MessageBox.Show(uguale.ToString());
+
+
+                    lblIndice.Content = "Fine";
+                    BtnAvanti.IsEnabled = false;
+                    BtnIndietro.IsEnabled = false;
+                    LblImporta.Content = "Inserire gli errori trovati";
+                    BtnImporta.Content = "Ripristina";
+                    lblFile.Content = "";
+                    pbProgress.Value = 100;
+
+                }
+                else
+                {
+                    MessageBox.Show("ATTENZIONE! Inserire tutti i file richiesti.");
+
+                }
+
+
+
                 
-                lblIndice.Content = "Fine";
-                BtnAvanti.IsEnabled = false;
-                BtnIndietro.IsEnabled = false;
-                LblImporta.Content = "Inserire gli errori trovati";
-                BtnImporta.Content = "Ripristina";
-                lblFile.Content = "";
-                pbProgress.Value = 100;
             }
 
 
