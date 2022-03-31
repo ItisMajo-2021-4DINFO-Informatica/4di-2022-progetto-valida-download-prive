@@ -26,10 +26,6 @@ namespace PrivèValidaDownloadApp
                     string linea = reader.ReadLine();
                     string[] elementi = linea.Split(' ');
                     shaDaVerificare = elementi[0];
-                    
-
-                  
-
 
                 }
 
@@ -65,7 +61,7 @@ namespace PrivèValidaDownloadApp
 
         public string openExplorer1(Microsoft.Win32.OpenFileDialog openFile)
         {
-            openFile.Filter = "(*.iso)|*.iso";
+            openFile.Filter = "(*.iso)|*.iso| All files(*.*)| *.*";
             openFile.InitialDirectory = @"C:\Temp\";
 
             if (openFile.ShowDialog() == true)
@@ -77,7 +73,7 @@ namespace PrivèValidaDownloadApp
         }
         public string openExplorer2(Microsoft.Win32.OpenFileDialog openFile)
         {
-            openFile.Filter = "(*.sha256)|*.sha256";
+            openFile.Filter = "(*.sha256)|*.sha256| All files(*.*)| *.*";
             openFile.InitialDirectory = @"C:\Temp\";
 
             if (openFile.ShowDialog() == true)
@@ -89,7 +85,7 @@ namespace PrivèValidaDownloadApp
         }
         public string openExplorer3(Microsoft.Win32.OpenFileDialog openFile)
         {
-            openFile.Filter = "(*.asc)|*.asc";
+            openFile.Filter = "(*.asc)|*.asc| All files(*.*)| *.*";
             openFile.InitialDirectory = @"C:\Temp\";
 
             if (openFile.ShowDialog() == true)
