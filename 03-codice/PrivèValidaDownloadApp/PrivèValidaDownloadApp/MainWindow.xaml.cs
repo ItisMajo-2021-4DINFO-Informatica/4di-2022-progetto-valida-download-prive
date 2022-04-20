@@ -100,7 +100,7 @@ namespace PrivèValidaDownloadApp
             if(BtnAvanti.Content == "Esegui")
             {
                
-                if(uno[1] != "Nessun file selezionato" && due[1] != "Nessun file selezionato" && tre[1] != "Nessun file selezionato")
+                if(uno[1] != "Nessun file selezionato" && due[1] != "Nessun file selezionato" && tre[1] != "Nessun file selezionato" && uno[1] != "Errore" && due[1] != "Errore" && tre[1] != "Errore")
                 {
                     string sha256 = (SHA256.SHA256CheckSum(uno[1]));
                     MessageBox.Show(sha256);
