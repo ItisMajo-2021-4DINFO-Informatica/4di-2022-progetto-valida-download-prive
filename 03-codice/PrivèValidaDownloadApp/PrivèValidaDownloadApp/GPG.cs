@@ -7,33 +7,51 @@ using System.IO;
 using System.Diagnostics;
 
 
+
 namespace PrivèValidaDownloadApp
 {
     class GPG
     {
 
-        public bool VerificaChiamataEsterna(string sha, string asc, string finger)
+        public string VerificaChiamataEsterna(string sha, string asc, string finger)
         {
-            string[] percorso1 = sha.Split('\\');
-            string percorso = percorso1[3];
+         
             string output;
 
-            bool res = true;
+
 
             using (Process pProcess = new Process())
             {
-                pProcess.StartInfo.Arguments = "cd " + percorso;
+                pProcess.StartInfo.FileName = @"C:\Program Files\Git\usr\bin\gpg.exe";
                 pProcess.StartInfo.Arguments = "--verify " +
-                      sha + " " +
-                      asc; 
+                    sha + " " + asc; //argument
                 pProcess.StartInfo.UseShellExecute = false;
                 pProcess.StartInfo.RedirectStandardOutput = true;
-                
+                //pProcess.StartInfo.WindowStyle = ProcessWindowStyle.Hidden;
+                //pProcess.StartInfo.CreateNoWindow = true; //not diplay a windows
                 pProcess.Start();
-                output = pProcess.StandardOutput.ReadToEnd();
+                output = pProcess.StandardOutput.ReadToEnd(); //The output result
                 pProcess.WaitForExit();
             }
-            return res;
+
+
+
+            using (Process pProcess = new Process())
+            {
+                pProcess.StartInfo.FileName = @"C:\Program Files\Git\usr\bin\gpg.exe";
+                pProcess.StartInfo.Arguments = "--verify " +
+                    sha + " " + asc; //argument
+                pProcess.StartInfo.UseShellExecute = false;
+                pProcess.StartInfo.RedirectStandardOutput = true;
+                //pProcess.StartInfo.WindowStyle = ProcessWindowStyle.Hidden;
+                //pProcess.StartInfo.CreateNoWindow = true; //not diplay a windows
+                pProcess.Start();
+                output = pProcess.StandardOutput.ReadToEnd(); //The output result
+                pProcess.WaitForExit();
+            }
+
+
+            return output;
         }
     }
 }

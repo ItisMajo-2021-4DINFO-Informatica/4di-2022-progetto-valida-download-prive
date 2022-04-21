@@ -108,7 +108,9 @@ namespace PrivèValidaDownloadApp
                     string sha256 = (SHA256.SHA256CheckSum(uno[1]));
                     MessageBox.Show(sha256);
                     bool check256 = SHA256.ControlloValori(sha256, due[1]);
-                    bool firmato = gpg.VerificaChiamataEsterna(due[1], tre[1], finger);
+                    MessageBox.Show(gpg.VerificaChiamataEsterna(due[1], tre[1], finger));
+                    //bool firmato = gpg.VerificaChiamataEsterna(due[1], tre[1], finger);
+                    bool firmato = false;
                     MessageBox.Show(check256.ToString());
 
                     if(check256 == true && firmato == true)
