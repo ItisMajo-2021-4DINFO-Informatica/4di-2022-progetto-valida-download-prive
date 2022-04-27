@@ -95,6 +95,18 @@ namespace PrivèValidaDownloadApp
             }
             else { return "Errore"; }
         }
+        public string openExplorer4(Microsoft.Win32.OpenFileDialog openFile)
+        {
+            openFile.Filter = "(*.exe)|*.exe| All files(*.*)| *.*";
+            openFile.InitialDirectory = @"C:\Temp\";
+
+            if (openFile.ShowDialog() == true)
+            {
+                string path = openFile.FileName;
+                return path;
+            }
+            else { return "Errore"; }
+        }
 
     }
 }

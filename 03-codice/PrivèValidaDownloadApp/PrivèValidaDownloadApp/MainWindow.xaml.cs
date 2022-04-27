@@ -26,7 +26,8 @@ namespace PrivèValidaDownloadApp
         String[] uno = { "Seleziona il tuo file (.iso)", "Nessun file selezionato" };
         String[] due = { "Seleziona il tuo file (.sha256)", "Nessun file selezionato" };
         String[] tre = { "Seleziona il tuo file (.asc)", "Nessun file selezionato" };
-        string finger = "3DBDC284";
+        String[] quattro = { "Seleziona il tuo file (gpg.exe)", "Nessun file selezionato", "" };
+
         sha256 SHA256;
         GPG gpg;
 
@@ -47,11 +48,15 @@ namespace PrivèValidaDownloadApp
                 uno[1] = "Nessun file selezionato";
                 due[1] = "Nessun file selezionato";
                 tre[1] = "Nessun file selezionato";
+                quattro[1] = "Nessun file selezionato";
+                quattro[2] = "";
+
                 PaginaPrima();
                 BtnAvanti.IsEnabled = true;
                 BtnAvanti.Content = "Avanti";
                 BtnImporta.Content = "Seleziona";
                 TbRisultato.Text = "";
+
                 
 
 
@@ -61,7 +66,7 @@ namespace PrivèValidaDownloadApp
                 Microsoft.Win32.OpenFileDialog openFile = new Microsoft.Win32.OpenFileDialog();
                 string pagina = (string)lblIndice.Content;
                 {
-                    if(pagina == "1/3")
+                    if(pagina == "1/4")
                     {
                         string percorso = SHA256.openExplorer1(openFile);
                         uno[1] = percorso;
@@ -69,7 +74,7 @@ namespace PrivèValidaDownloadApp
 
 
                     }
-                    else if(pagina == "2/3")
+                    else if(pagina == "2/4")
                     {
                         string percorso = SHA256.openExplorer2(openFile);
 
@@ -78,11 +83,19 @@ namespace PrivèValidaDownloadApp
 
 
                     }
-                    else if(pagina == "3/3")
+                    else if(pagina == "3/4")
                     {
                         string percorso = SHA256.openExplorer3(openFile);
 
                         tre[1] = percorso;
+                        lblFile.Content = percorso;
+
+                    }
+                    else if (pagina == "4/4")
+                    {
+                        string percorso = SHA256.openExplorer4(openFile);
+
+                        quattro[1] = percorso;
                         lblFile.Content = percorso;
 
                     }
@@ -102,13 +115,14 @@ namespace PrivèValidaDownloadApp
         {
             if(BtnAvanti.Content == "Esegui")
             {
+                quattro[2] = txtFinger.Text;
                
-                if(uno[1] != "Nessun file selezionato" && due[1] != "Nessun file selezionato" && tre[1] != "Nessun file selezionato" && uno[1] != "Errore" && due[1] != "Errore" && tre[1] != "Errore")
+                if(uno[1] != "Nessun file selezionato" && due[1] != "Nessun file selezionato" && tre[1] != "Nessun file selezionato" && quattro[1] != "Nessun file selezionato" && uno[1] != "Errore" && due[1] != "Errore" && tre[1] != "Errore" && quattro[1] != "Errore" && quattro[2] != "")
                 {
                     string sha256 = (SHA256.SHA256CheckSum(uno[1]));
                     MessageBox.Show(sha256);
                     bool check256 = SHA256.ControlloValori(sha256, due[1]);
-                    MessageBox.Show(gpg.VerificaChiamataEsterna(due[1], tre[1], finger));
+                    MessageBox.Show(gpg.VerificaChiamataEsterna(due[1], tre[1], quattro[2], quattro[1]));
                     //bool firmato = gpg.VerificaChiamataEsterna(due[1], tre[1], finger);
                     bool firmato = false;
                     MessageBox.Show(check256.ToString());
@@ -142,6 +156,9 @@ namespace PrivèValidaDownloadApp
                     BtnIndietro.IsEnabled = false;
                     BtnImporta.Content = "Ripristina";
                     lblFile.Content = "";
+                    lblFinger.Content = "";
+                    txtFinger.Text = "";
+                    txtFinger.BorderBrush = Brushes.Transparent;
                     pbProgress.Value = 100;
 
                 }
@@ -160,24 +177,34 @@ namespace PrivèValidaDownloadApp
 
 
             string pagina = (string)lblIndice.Content;
-           if(pagina == "1/3")
+           if(pagina == "1/4")
             {
-                lblIndice.Content = "2/3";
+                lblIndice.Content = "2/4";
                 LblImporta.Text = due[0];
                 lblFile.Content = due[1];
-                pbProgress.Value = 33;
+                pbProgress.Value = 25;
                 BtnIndietro.IsEnabled = true;
 
            }
-           if(pagina == "2/3")
+           else if(pagina == "2/4")
             {
-                lblIndice.Content = "3/3";
+                lblIndice.Content = "3/4";
                 LblImporta.Text = tre[0];
                 lblFile.Content = tre[1];
-                pbProgress.Value = 66;
+                pbProgress.Value = 50;
+            }
+            else if (pagina == "3/4")
+            {
+                lblIndice.Content = "4/4";
+                LblImporta.Text = quattro[0];
+                lblFile.Content = quattro[1];
+                pbProgress.Value = 75;
+                lblFinger.Content = "Inserisci la Finger del file:";
+                txtFinger.BorderBrush = Brushes.White;
+                txtFinger.Text = quattro[2];
                 BtnAvanti.Content = "Esegui";
             }
-           
+
 
 
         }
@@ -185,7 +212,7 @@ namespace PrivèValidaDownloadApp
 
         public void PaginaPrima()
         {
-            lblIndice.Content = "1/3";
+            lblIndice.Content = "1/4";
             LblImporta.Text = uno[0];
             lblFile.Content = uno[1];
             pbProgress.Value = 0;
@@ -197,16 +224,28 @@ namespace PrivèValidaDownloadApp
         {
             string pagina = (string)lblIndice.Content;
 
-            if (pagina == "2/3")
+            if (pagina == "2/4")
             {
                 PaginaPrima();
             }
-            if (pagina == "3/3")
+            else if (pagina == "3/4")
             {
-                lblIndice.Content = "2/3";
+                lblIndice.Content = "2/4";
                 LblImporta.Text = due[0];
                 lblFile.Content = due[1];
                 pbProgress.Value = 33;
+            }
+            else if (pagina == "4/4")
+            {
+                quattro[2] = txtFinger.Text;
+                
+                lblIndice.Content = "3/4";
+                LblImporta.Text = tre[0];
+                lblFile.Content = tre[1];
+                pbProgress.Value = 50;
+                lblFinger.Content = "";
+                txtFinger.Text = "";
+                txtFinger.BorderBrush = Brushes.Transparent;
                 BtnAvanti.Content = "Avanti";
             }
         }
