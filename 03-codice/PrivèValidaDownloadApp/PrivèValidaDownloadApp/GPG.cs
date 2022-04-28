@@ -32,9 +32,9 @@ namespace PrivèValidaDownloadApp
                     //pProcess.Start();
                     //output = pProcess.StandardOutput.ReadToEnd(); //The output result
                     //pProcess.WaitForExit();
-                    pProcess.StartInfo.FileName = exe;
+                    pProcess.StartInfo.FileName = "cmd.exe";
 
-                    pProcess.StartInfo.Arguments = "gpg --recv-keys " + finger; //argument
+                  pProcess.StartInfo.Arguments = "gpg --recv-keys " + finger; //argument
                     pProcess.StartInfo.UseShellExecute = false;
                     pProcess.StartInfo.RedirectStandardOutput = true;
                     pProcess.Start();

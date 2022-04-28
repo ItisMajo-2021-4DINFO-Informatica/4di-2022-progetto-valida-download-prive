@@ -120,12 +120,12 @@ namespace PrivèValidaDownloadApp
                 if(uno[1] != "Nessun file selezionato" && due[1] != "Nessun file selezionato" && tre[1] != "Nessun file selezionato" && quattro[1] != "Nessun file selezionato" && quattro[2] != "")
                 {
                     string sha256 = (SHA256.SHA256CheckSum(uno[1]));
-                    MessageBox.Show(sha256);
+                    //MessageBox.Show(sha256);
                     bool check256 = SHA256.ControlloValori(sha256, due[1]);
                     MessageBox.Show(gpg.VerificaChiamataEsterna(due[1], tre[1], quattro[2], quattro[1]));
                     //bool firmato = gpg.VerificaChiamataEsterna(due[1], tre[1], finger);
                     bool firmato = false;
-                    MessageBox.Show(check256.ToString());
+                   // MessageBox.Show(check256.ToString());
 
                     if(check256 == true && firmato == true)
                     {
