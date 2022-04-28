@@ -117,7 +117,7 @@ namespace PrivèValidaDownloadApp
             {
                 quattro[2] = txtFinger.Text;
                
-                if(uno[1] != "Nessun file selezionato" && due[1] != "Nessun file selezionato" && tre[1] != "Nessun file selezionato" && quattro[1] != "Nessun file selezionato" && uno[1] != "Errore" && due[1] != "Errore" && tre[1] != "Errore" && quattro[1] != "Errore" && quattro[2] != "")
+                if(uno[1] != "Nessun file selezionato" && due[1] != "Nessun file selezionato" && tre[1] != "Nessun file selezionato" && quattro[1] != "Nessun file selezionato" && quattro[2] != "")
                 {
                     string sha256 = (SHA256.SHA256CheckSum(uno[1]));
                     MessageBox.Show(sha256);
@@ -159,6 +159,7 @@ namespace PrivèValidaDownloadApp
                     lblFinger.Content = "";
                     txtFinger.Text = "";
                     txtFinger.BorderBrush = Brushes.Transparent;
+                    txtFinger.IsEnabled = false;
                     pbProgress.Value = 100;
 
                 }
@@ -201,6 +202,7 @@ namespace PrivèValidaDownloadApp
                 pbProgress.Value = 75;
                 lblFinger.Content = "Inserisci la Finger del file:";
                 txtFinger.BorderBrush = Brushes.White;
+                txtFinger.IsEnabled = true;
                 txtFinger.Text = quattro[2];
                 BtnAvanti.Content = "Esegui";
             }
@@ -246,6 +248,7 @@ namespace PrivèValidaDownloadApp
                 lblFinger.Content = "";
                 txtFinger.Text = "";
                 txtFinger.BorderBrush = Brushes.Transparent;
+                txtFinger.IsEnabled = false;
                 BtnAvanti.Content = "Avanti";
             }
         }

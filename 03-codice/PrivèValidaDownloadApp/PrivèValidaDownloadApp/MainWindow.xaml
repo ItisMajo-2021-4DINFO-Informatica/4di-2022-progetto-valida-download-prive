@@ -188,7 +188,7 @@
         <Label x:Name="lblFile" Content="Nessun file selezionato" HorizontalAlignment="Left" Margin="23,347,0,0" VerticalAlignment="Top" FontFamily="Cooper Black" Background="{x:Null}" Foreground="White" FontSize="16" FontStyle="Italic" HorizontalContentAlignment="Center" Width="854"/>
         <Label x:Name="lblIndice" Content="1/4" HorizontalAlignment="Left" Margin="804,17,0,0" VerticalAlignment="Top" Foreground="White" FontFamily="Cooper Black" FontSize="24" RenderTransformOrigin="1.591,1.216" Width="82" Background="#FF00A8F3" HorizontalContentAlignment="Center"/>
         <Label x:Name="lblFinger" Content="" HorizontalAlignment="Left" Margin="174,407,0,0" VerticalAlignment="Top" FontFamily="Cooper Black" Background="{x:Null}" Foreground="White" FontSize="24" FontStyle="Italic" Width="703"/>
-        <TextBox x:Name="txtFinger"  HorizontalAlignment="Left" Margin="540,401,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="186" FontFamily="Cooper Black" FontSize="22" Foreground="White" BorderBrush="#FF00A8F3" Background="#FF00A8F3" BorderThickness="2,2,2,2" Padding="10,10,10,10" SelectionBrush="#FF00A8F3"/>
+        <TextBox x:Name="txtFinger"  IsEnabled="False" HorizontalAlignment="Left" Margin="540,401,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="186" FontFamily="Cooper Black" FontSize="22" Foreground="White" BorderBrush="#FF00A8F3" Background="#FF00A8F3" BorderThickness="2,2,2,2" Padding="10,10,10,10" SelectionBrush="#FF00A8F3"/>
 
     </Grid>
 </Window>

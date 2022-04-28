@@ -69,7 +69,7 @@ namespace PrivèValidaDownloadApp
                 string path = openFile.FileName;
                 return path;
             }
-            else { return "Errore"; }
+            else { return "Nessun file selezionato"; }
         }
         public string openExplorer2(Microsoft.Win32.OpenFileDialog openFile)
         {
@@ -81,7 +81,7 @@ namespace PrivèValidaDownloadApp
                 string path = openFile.FileName;
                 return path;
             }
-            else { return "Errore"; }
+            else { return "Nessun file selezionato"; }
         }
         public string openExplorer3(Microsoft.Win32.OpenFileDialog openFile)
         {
@@ -93,7 +93,7 @@ namespace PrivèValidaDownloadApp
                 string path = openFile.FileName;
                 return path;
             }
-            else { return "Errore"; }
+            else { return "Nessun file selezionato"; }
         }
         public string openExplorer4(Microsoft.Win32.OpenFileDialog openFile)
         {
@@ -105,7 +105,7 @@ namespace PrivèValidaDownloadApp
                 string path = openFile.FileName;
                 return path;
             }
-            else { return "Errore"; }
+            else { return "Nessun file selezionato"; }
         }
 
     }

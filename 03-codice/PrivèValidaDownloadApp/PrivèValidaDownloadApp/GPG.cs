@@ -23,20 +23,29 @@ namespace PrivèValidaDownloadApp
 
                 using (Process pProcess = new Process())
                 {
+                    //pProcess.StartInfo.FileName = exe;
+                    //pProcess.StartInfo.Arguments = "gpg --recv-keys " + finger; //argument
+                    //pProcess.StartInfo.UseShellExecute = false;
+                    //pProcess.StartInfo.RedirectStandardOutput = true;
+                    ////pProcess.StartInfo.WindowStyle = ProcessWindowStyle.Hidden;
+                    //pProcess.StartInfo.CreateNoWindow = true; //not diplay a windows
+                    //pProcess.Start();
+                    //output = pProcess.StandardOutput.ReadToEnd(); //The output result
+                    //pProcess.WaitForExit();
                     pProcess.StartInfo.FileName = exe;
+
                     pProcess.StartInfo.Arguments = "gpg --recv-keys " + finger; //argument
                     pProcess.StartInfo.UseShellExecute = false;
-                    //pProcess.StartInfo.RedirectStandardOutput = true;
-                    //pProcess.StartInfo.WindowStyle = ProcessWindowStyle.Hidden;
-                    //pProcess.StartInfo.CreateNoWindow = true; //not diplay a windows
+                    pProcess.StartInfo.RedirectStandardOutput = true;
                     pProcess.Start();
-                    //output = pProcess.StandardOutput.ReadToEnd(); //The output result
-                    pProcess.WaitForExit();
+                    // Synchronously read the standard output of the spawned process.
+                    StreamReader reader = pProcess.StandardOutput;
+                    output = reader.ReadToEnd();
                 }
 
 
 
-                using (Process pProcess = new Process())
+               /* using (Process pProcess = new Process())
                 {
                     pProcess.StartInfo.FileName = exe;
                     pProcess.StartInfo.Arguments = "gpg --verify " +
@@ -48,7 +57,7 @@ namespace PrivèValidaDownloadApp
                     pProcess.Start();
                     output = pProcess.StandardOutput.ReadToEnd(); //The output result
                     pProcess.WaitForExit();
-                }
+                }*/
 
             }
             catch (Exception e)
