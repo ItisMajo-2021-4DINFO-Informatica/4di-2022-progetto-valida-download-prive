@@ -26,7 +26,7 @@ namespace PrivèValidaDownloadApp
         String[] uno = { "Seleziona il tuo file (.iso)", "Nessun file selezionato" };
         String[] due = { "Seleziona il tuo file (.sha256)", "Nessun file selezionato" };
         String[] tre = { "Seleziona il tuo file (.asc)", "Nessun file selezionato" };
-        String[] quattro = { "Seleziona il tuo file (gpg.exe)", "Nessun file selezionato", "" };
+        String[] quattro = { "Inserisci la Finger del file", "", "" };
 
         sha256 SHA256;
         GPG gpg;
@@ -48,7 +48,7 @@ namespace PrivèValidaDownloadApp
                 uno[1] = "Nessun file selezionato";
                 due[1] = "Nessun file selezionato";
                 tre[1] = "Nessun file selezionato";
-                quattro[1] = "Nessun file selezionato";
+                quattro[1] = "";
                 quattro[2] = "";
 
                 PaginaPrima();
@@ -56,9 +56,8 @@ namespace PrivèValidaDownloadApp
                 BtnAvanti.Content = "Avanti";
                 BtnImporta.Content = "Seleziona";
                 TbRisultato.Text = "";
-
-                
-
+                BtnImporta.Visibility = Visibility.Visible;
+                txtFinger.Visibility = Visibility.Hidden;
 
             }
             else
@@ -93,10 +92,8 @@ namespace PrivèValidaDownloadApp
                     }
                     else if (pagina == "4/4")
                     {
-                        string percorso = SHA256.openExplorer4(openFile);
 
-                        quattro[1] = percorso;
-                        lblFile.Content = percorso;
+                        lblFile.Content = quattro[1];
 
                     }
                 }
@@ -156,7 +153,6 @@ namespace PrivèValidaDownloadApp
                     BtnIndietro.IsEnabled = false;
                     BtnImporta.Content = "Ripristina";
                     lblFile.Content = "";
-                    lblFinger.Content = "";
                     txtFinger.Text = "";
                     txtFinger.BorderBrush = Brushes.Transparent;
                     txtFinger.IsEnabled = false;
@@ -200,11 +196,13 @@ namespace PrivèValidaDownloadApp
                 LblImporta.Text = quattro[0];
                 lblFile.Content = quattro[1];
                 pbProgress.Value = 75;
-                lblFinger.Content = "Inserisci la Finger del file:";
                 txtFinger.BorderBrush = Brushes.White;
+                txtFinger.Visibility= Visibility.Visible;
+
                 txtFinger.IsEnabled = true;
                 txtFinger.Text = quattro[2];
                 BtnAvanti.Content = "Esegui";
+                BtnImporta.Visibility = Visibility.Hidden;
             }
 
 
@@ -245,11 +243,14 @@ namespace PrivèValidaDownloadApp
                 LblImporta.Text = tre[0];
                 lblFile.Content = tre[1];
                 pbProgress.Value = 50;
-                lblFinger.Content = "";
                 txtFinger.Text = "";
                 txtFinger.BorderBrush = Brushes.Transparent;
+                txtFinger.Visibility = Visibility.Hidden;
+
                 txtFinger.IsEnabled = false;
                 BtnAvanti.Content = "Avanti";
+                BtnImporta.Visibility = Visibility.Visible;
+
             }
         }
     }
