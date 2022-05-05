@@ -147,15 +147,14 @@ namespace PrivèValidaDownloadApp
 
 
 
-
+                    BtnImporta.Visibility = Visibility.Visible;
                     lblIndice.Content = "Fine";
                     BtnAvanti.IsEnabled = false;
                     BtnIndietro.IsEnabled = false;
                     BtnImporta.Content = "Ripristina";
                     lblFile.Content = "";
                     txtFinger.Text = "";
-                    txtFinger.BorderBrush = Brushes.Transparent;
-                    txtFinger.IsEnabled = false;
+                    txtFinger.Visibility = Visibility.Hidden;
                     pbProgress.Value = 100;
 
                 }

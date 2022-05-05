@@ -62,14 +62,35 @@ namespace PrivèValidaDownloadApp
                 {
                     pProcess.StartInfo.UseShellExecute = false;
                     pProcess.StartInfo.RedirectStandardOutput = true;
+                    pProcess.StartInfo.CreateNoWindow = true;
                     pProcess.StartInfo.FileName = "cmd.exe";
 
-                    pProcess.StartInfo.Arguments = "/k gpg --recv-keys " + finger;
-                    pProcess.StartInfo.Arguments = "/k gpg --verify " + asc + " " + sha;
+                    pProcess.StartInfo.Arguments = "/k gpg --recv-keys " + finger ;
+                    //pProcess.StartInfo.Arguments = "/k gpg --verify " + asc + " " + sha;
+                    //pProcess.StartInfo.Arguments = "/k ipconfig";
+
 
                     pProcess.Start();
-                    //pProcess.WaitForExit();
+
+                }
+
+                using (Process pProcess = new Process())
+                {
+                    pProcess.StartInfo.UseShellExecute = false;
+                    pProcess.StartInfo.RedirectStandardOutput = true;
+                    pProcess.StartInfo.FileName = "cmd.exe";
+
+                   // pProcess.StartInfo.Arguments = "/k gpg --recv-keys " + finger;
+                    pProcess.StartInfo.Arguments = "/k gpg --verify " + asc + " " + sha;
+                    //pProcess.StartInfo.Arguments = "/k ipconfig";
+
+
+                    pProcess.Start();
+
+                    StreamReader streamReader = pProcess.StandardOutput;
+
                     output = pProcess.StandardOutput.ReadToEnd();
+                    pProcess.WaitForExit(); 
 
                 }
 
