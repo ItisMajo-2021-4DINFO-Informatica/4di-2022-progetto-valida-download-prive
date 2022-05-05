@@ -30,6 +30,8 @@ namespace PrivèValidaDownloadApp
 
         sha256 SHA256;
         GPG gpg;
+        bool check256;
+        bool firmato;
 
 
 
@@ -38,6 +40,7 @@ namespace PrivèValidaDownloadApp
             InitializeComponent();
             SHA256 = new sha256();
             gpg = new GPG();
+            
 
         }
 
@@ -58,6 +61,9 @@ namespace PrivèValidaDownloadApp
                 TbRisultato.Text = "";
                 BtnImporta.Visibility = Visibility.Visible;
                 txtFinger.Visibility = Visibility.Hidden;
+                lblSI.Visibility = Visibility.Hidden;
+                RbNO.Visibility = Visibility.Hidden;
+                RbSI.Visibility = Visibility.Hidden;
 
             }
             else
@@ -117,43 +123,21 @@ namespace PrivèValidaDownloadApp
                 if(uno[1] != "Nessun file selezionato" && due[1] != "Nessun file selezionato" && tre[1] != "Nessun file selezionato" && quattro[1] != "Nessun file selezionato" && quattro[2] != "")
                 {
                     string sha256 = (SHA256.SHA256CheckSum(uno[1]));
-                    //MessageBox.Show(sha256);
-                    bool check256 = SHA256.ControlloValori(sha256, due[1]);
-                    MessageBox.Show(gpg.VerificaChiamataEsterna(due[1], tre[1], quattro[2], quattro[1]));
-                    //bool firmato = gpg.VerificaChiamataEsterna(due[1], tre[1], finger);
-                    bool firmato = false;
-                   // MessageBox.Show(check256.ToString());
-
-                    if(check256 == true && firmato == true)
-                    {
-                        TbRisultato.Text = "Il tuo file è sicuro";
-                        LblImporta.Text = "Il checksum SHA256 e la firma digitale del tuo file sono corretti.";
-                    }
-                    else if(check256 == true)
-                    {
-                        TbRisultato.Text = "Il tuo file NON è sicuro";
-                        LblImporta.Text = "Il checksum SHA256 è corretto, ma la firma digitale del tuo file NON corrisponde.";
-                    }
-                    else if (firmato == true)
-                    {
-                        TbRisultato.Text = "Il tuo file NON è sicuro";
-                        LblImporta.Text = "La firma digitale corrisponde, ma il checksum SHA256 del tuo file NON è corretto.";
-                    }
-                    else
-                    {
-                        TbRisultato.Text = "Il tuo file NON è sicuro";
-                        LblImporta.Text = "Il checksum SHA256 e la firma digitale del tuo file NON sono corretti.";
-                    }
+                    check256 = SHA256.ControlloValori(sha256, due[1]);
+                    gpg.VerificaChiamataEsterna(due[1], tre[1], quattro[2], quattro[1]);
+                    
+                    LblImporta.Text = "Selezionare un'opzione.";     
+                    
 
 
-
-                    BtnImporta.Visibility = Visibility.Visible;
+                    lblSI.Visibility = Visibility.Visible;
+                    RbNO.Visibility = Visibility.Visible;
+                    RbSI.Visibility = Visibility.Visible;
                     lblIndice.Content = "Fine";
                     BtnAvanti.IsEnabled = false;
                     BtnIndietro.IsEnabled = false;
                     BtnImporta.Content = "Ripristina";
                     lblFile.Content = "";
-                    txtFinger.Text = "";
                     txtFinger.Visibility = Visibility.Hidden;
                     pbProgress.Value = 100;
 
@@ -195,10 +179,7 @@ namespace PrivèValidaDownloadApp
                 LblImporta.Text = quattro[0];
                 lblFile.Content = quattro[1];
                 pbProgress.Value = 75;
-                txtFinger.BorderBrush = Brushes.White;
                 txtFinger.Visibility= Visibility.Visible;
-
-                txtFinger.IsEnabled = true;
                 txtFinger.Text = quattro[2];
                 BtnAvanti.Content = "Esegui";
                 BtnImporta.Visibility = Visibility.Hidden;
@@ -219,6 +200,32 @@ namespace PrivèValidaDownloadApp
         }
 
 
+        public void Controlli()
+        {
+            if (check256 == true && firmato == true)
+            {
+                TbRisultato.Text = "Il tuo file è sicuro";
+                LblImporta.Text = "Il checksum SHA256 e la firma digitale del tuo file sono corretti.";
+            }
+            else if (check256 == true)
+            {
+                TbRisultato.Text = "Il tuo file NON è sicuro";
+                LblImporta.Text = "Il checksum SHA256 è corretto, ma la firma digitale del tuo file NON corrisponde.";
+            }
+            else if (firmato == true)
+            {
+                TbRisultato.Text = "Il tuo file NON è sicuro";
+                LblImporta.Text = "La firma digitale corrisponde, ma il checksum SHA256 del tuo file NON è corretto.";
+            }
+            else
+            {
+                TbRisultato.Text = "Il tuo file NON è sicuro";
+                LblImporta.Text = "Il checksum SHA256 e la firma digitale del tuo file NON sono corretti.";
+            }
+
+            BtnImporta.Visibility = Visibility.Visible;
+        }
+
         private void BtnIndietro_Click(object sender, RoutedEventArgs e)
         {
             string pagina = (string)lblIndice.Content;
@@ -232,7 +239,7 @@ namespace PrivèValidaDownloadApp
                 lblIndice.Content = "2/4";
                 LblImporta.Text = due[0];
                 lblFile.Content = due[1];
-                pbProgress.Value = 33;
+                pbProgress.Value = 25;
             }
             else if (pagina == "4/4")
             {
@@ -242,15 +249,29 @@ namespace PrivèValidaDownloadApp
                 LblImporta.Text = tre[0];
                 lblFile.Content = tre[1];
                 pbProgress.Value = 50;
-                txtFinger.Text = "";
-                txtFinger.BorderBrush = Brushes.Transparent;
                 txtFinger.Visibility = Visibility.Hidden;
-
-                txtFinger.IsEnabled = false;
                 BtnAvanti.Content = "Avanti";
                 BtnImporta.Visibility = Visibility.Visible;
 
             }
+        }
+
+       
+
+        private void RbSI_Click(object sender, RoutedEventArgs e)
+        {
+
+            firmato = true;
+
+            Controlli();
+        }
+
+        private void RbNO_Click(object sender, RoutedEventArgs e)
+        {
+
+            firmato = false;
+
+            Controlli();
         }
     }
 }
