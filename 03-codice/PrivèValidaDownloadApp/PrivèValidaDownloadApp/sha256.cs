@@ -35,7 +35,6 @@ namespace PrivèValidaDownloadApp
             if(shaDaVerificare == sha)
             {
                 uguale = true;
-                
             }
             else
             {
@@ -62,30 +61,25 @@ namespace PrivèValidaDownloadApp
         public string openExplorer1(Microsoft.Win32.OpenFileDialog openFile)
         {
             openFile.Filter = "(*.iso)|*.iso| All files(*.*)| *.*";
-            openFile.InitialDirectory = @"C:\Temp\";
+            return ApriDialogo(openFile);
 
-            if (openFile.ShowDialog() == true)
-            {
-                string path = openFile.FileName;
-                return path;
-            }
-            else { return "Nessun file selezionato"; }
         }
         public string openExplorer2(Microsoft.Win32.OpenFileDialog openFile)
         {
             openFile.Filter = "(*.sha256)|*.sha256| All files(*.*)| *.*";
-            openFile.InitialDirectory = @"C:\Temp\";
+            return ApriDialogo(openFile);
 
-            if (openFile.ShowDialog() == true)
-            {
-                string path = openFile.FileName;
-                return path;
-            }
-            else { return "Nessun file selezionato"; }
         }
         public string openExplorer3(Microsoft.Win32.OpenFileDialog openFile)
         {
             openFile.Filter = "(*.asc)|*.asc| All files(*.*)| *.*";
+            return ApriDialogo(openFile);
+            
+        }
+        
+
+        public string ApriDialogo(Microsoft.Win32.OpenFileDialog openFile)
+        {
             openFile.InitialDirectory = @"C:\Temp\";
 
             if (openFile.ShowDialog() == true)
@@ -95,7 +89,6 @@ namespace PrivèValidaDownloadApp
             }
             else { return "Nessun file selezionato"; }
         }
-        
 
     }
 }

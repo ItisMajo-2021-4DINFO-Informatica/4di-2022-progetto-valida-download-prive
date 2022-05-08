@@ -55,16 +55,7 @@ namespace PrivèValidaDownloadApp
                 quattro[2] = "";
 
                 PaginaPrima();
-                BtnAvanti.IsEnabled = true;
-                BtnAvanti.Content = "Avanti";
-                BtnImporta.Content = "Seleziona";
-                TbRisultato.Text = "";
-                BtnImporta.Visibility = Visibility.Visible;
-                txtFinger.Visibility = Visibility.Hidden;
-                lblSI.Visibility = Visibility.Hidden;
-                RbNO.Visibility = Visibility.Hidden;
-                RbSI.Visibility = Visibility.Hidden;
-
+                
             }
             else
             {
@@ -82,7 +73,6 @@ namespace PrivèValidaDownloadApp
                     else if(pagina == "2/4")
                     {
                         string percorso = SHA256.openExplorer2(openFile);
-
                         due[1] = percorso;
                         lblFile.Content = percorso;
 
@@ -91,17 +81,11 @@ namespace PrivèValidaDownloadApp
                     else if(pagina == "3/4")
                     {
                         string percorso = SHA256.openExplorer3(openFile);
-
                         tre[1] = percorso;
                         lblFile.Content = percorso;
 
                     }
-                    else if (pagina == "4/4")
-                    {
-
-                        lblFile.Content = quattro[1];
-
-                    }
+                   
                 }
 
 
@@ -120,17 +104,13 @@ namespace PrivèValidaDownloadApp
             {
                 quattro[2] = txtFinger.Text;
                
-                if(uno[1] != "Nessun file selezionato" && due[1] != "Nessun file selezionato" && tre[1] != "Nessun file selezionato" && quattro[1] != "Nessun file selezionato" && quattro[2] != "")
+                if(uno[1] != "Nessun file selezionato" && due[1] != "Nessun file selezionato" && tre[1] != "Nessun file selezionato" && quattro[2] != "")
                 {
                     string sha256 = (SHA256.SHA256CheckSum(uno[1]));
                     check256 = SHA256.ControlloValori(sha256, due[1]);
-                    gpg.VerificaChiamataEsterna(due[1], tre[1], quattro[2], quattro[1]);
+                    gpg.VerificaChiamataEsterna(due[1], tre[1], quattro[2]);
                     
-                    LblImporta.Text = "Selezionare un'opzione.";     
-                    
-
-
-                    lblSI.Visibility = Visibility.Visible;
+                    LblImporta.Text = "La firma verificata è corretta?";     
                     RbNO.Visibility = Visibility.Visible;
                     RbSI.Visibility = Visibility.Visible;
                     lblIndice.Content = "Fine";
@@ -144,7 +124,7 @@ namespace PrivèValidaDownloadApp
                 }
                 else
                 {
-                    MessageBox.Show("ATTENZIONE! Inserire tutti i file richiesti.");
+                    MessageBox.Show("ATTENZIONE! Inserire tutti gli elementi richiesti.");
 
                 }
 
@@ -152,40 +132,38 @@ namespace PrivèValidaDownloadApp
 
                 
             }
-
-
-
-
-            string pagina = (string)lblIndice.Content;
-           if(pagina == "1/4")
+            else
             {
-                lblIndice.Content = "2/4";
-                LblImporta.Text = due[0];
-                lblFile.Content = due[1];
-                pbProgress.Value = 25;
-                BtnIndietro.IsEnabled = true;
+                string pagina = (string)lblIndice.Content;
+                if (pagina == "1/4")
+                {
+                    lblIndice.Content = "2/4";
+                    LblImporta.Text = due[0];
+                    lblFile.Content = due[1];
+                    pbProgress.Value = 25;
+                    BtnIndietro.IsEnabled = true;
 
-           }
-           else if(pagina == "2/4")
-            {
-                lblIndice.Content = "3/4";
-                LblImporta.Text = tre[0];
-                lblFile.Content = tre[1];
-                pbProgress.Value = 50;
+                }
+                else if (pagina == "2/4")
+                {
+                    lblIndice.Content = "3/4";
+                    LblImporta.Text = tre[0];
+                    lblFile.Content = tre[1];
+                    pbProgress.Value = 50;
+                }
+                else if (pagina == "3/4")
+                {
+                    lblIndice.Content = "4/4";
+                    LblImporta.Text = quattro[0];
+                    lblFile.Content = quattro[1];
+                    pbProgress.Value = 75;
+                    txtFinger.Visibility = Visibility.Visible;
+                    txtFinger.Text = quattro[2];
+                    BtnAvanti.Content = "Esegui";
+                    BtnImporta.Visibility = Visibility.Hidden;
+                }
+
             }
-            else if (pagina == "3/4")
-            {
-                lblIndice.Content = "4/4";
-                LblImporta.Text = quattro[0];
-                lblFile.Content = quattro[1];
-                pbProgress.Value = 75;
-                txtFinger.Visibility= Visibility.Visible;
-                txtFinger.Text = quattro[2];
-                BtnAvanti.Content = "Esegui";
-                BtnImporta.Visibility = Visibility.Hidden;
-            }
-
-
 
         }
 
@@ -196,34 +174,43 @@ namespace PrivèValidaDownloadApp
             LblImporta.Text = uno[0];
             lblFile.Content = uno[1];
             pbProgress.Value = 0;
+            BtnAvanti.Content = "Avanti";
+            BtnImporta.Content = "Seleziona";
+            TbRisultato.Text = "";
+            BtnImporta.Visibility = Visibility.Visible;
+            txtFinger.Visibility = Visibility.Hidden;
             BtnIndietro.IsEnabled = false;
+            BtnAvanti.IsEnabled = true;
         }
 
 
         public void Controlli()
         {
+            RbNO.Visibility = Visibility.Hidden;
+            RbSI.Visibility = Visibility.Hidden;
+            BtnImporta.Visibility = Visibility.Visible;
+
             if (check256 == true && firmato == true)
             {
                 TbRisultato.Text = "Il tuo file è sicuro";
-                LblImporta.Text = "Il checksum SHA256 e la firma digitale del tuo file sono corretti.";
+                LblImporta.Text = "✔ checksum SHA256     ✔ firma digitale";
             }
             else if (check256 == true)
             {
                 TbRisultato.Text = "Il tuo file NON è sicuro";
-                LblImporta.Text = "Il checksum SHA256 è corretto, ma la firma digitale del tuo file NON corrisponde.";
+                LblImporta.Text = "✔ checksum SHA256     ✘ firma digitale";
             }
             else if (firmato == true)
             {
                 TbRisultato.Text = "Il tuo file NON è sicuro";
-                LblImporta.Text = "La firma digitale corrisponde, ma il checksum SHA256 del tuo file NON è corretto.";
+                LblImporta.Text = "✘ checksum SHA256     ✔ firma digitale";
             }
             else
             {
                 TbRisultato.Text = "Il tuo file NON è sicuro";
-                LblImporta.Text = "Il checksum SHA256 e la firma digitale del tuo file NON sono corretti.";
+                LblImporta.Text = "✘ checksum SHA256     ✘ firma digitale";
             }
 
-            BtnImporta.Visibility = Visibility.Visible;
         }
 
         private void BtnIndietro_Click(object sender, RoutedEventArgs e)
@@ -243,9 +230,8 @@ namespace PrivèValidaDownloadApp
             }
             else if (pagina == "4/4")
             {
-                quattro[2] = txtFinger.Text;
-                
                 lblIndice.Content = "3/4";
+                quattro[2] = txtFinger.Text;
                 LblImporta.Text = tre[0];
                 lblFile.Content = tre[1];
                 pbProgress.Value = 50;
@@ -262,7 +248,6 @@ namespace PrivèValidaDownloadApp
         {
 
             firmato = true;
-
             Controlli();
         }
 
@@ -270,7 +255,6 @@ namespace PrivèValidaDownloadApp
         {
 
             firmato = false;
-
             Controlli();
         }
     }

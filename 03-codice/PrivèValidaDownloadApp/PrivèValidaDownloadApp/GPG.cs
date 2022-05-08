@@ -13,7 +13,7 @@ namespace PrivèValidaDownloadApp
     class GPG
     {
 
-        public void VerificaChiamataEsterna(string sha, string asc, string finger, string exe)
+        public void VerificaChiamataEsterna(string sha, string asc, string finger)
         {
          
 
@@ -26,15 +26,9 @@ namespace PrivèValidaDownloadApp
                     pProcess.StartInfo.RedirectStandardOutput = true;
                     pProcess.StartInfo.CreateNoWindow = true;
                     pProcess.StartInfo.FileName = "cmd.exe";
-
                     pProcess.StartInfo.Arguments = "/k gpg --recv-keys " + finger ;
-        
-
-
                     pProcess.Start();
                     pProcess.WaitForExit(1000);
-
-
                 }
 
                 using (Process pProcess = new Process())
@@ -42,18 +36,10 @@ namespace PrivèValidaDownloadApp
                     pProcess.StartInfo.UseShellExecute = false;
                     pProcess.StartInfo.RedirectStandardOutput = true;
                     pProcess.StartInfo.FileName = "cmd.exe";
-
                     pProcess.StartInfo.Arguments = "/k gpg --verify " + asc + " " + sha;
-
-
                     pProcess.Start();
-
                     StreamReader streamReader = pProcess.StandardOutput;
-
-                    //output = pProcess.StandardOutput.ReadToEnd();
                     pProcess.WaitForExit();
-
-
                 }
 
             }
