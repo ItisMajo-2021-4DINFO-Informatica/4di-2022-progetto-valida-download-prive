@@ -53,6 +53,8 @@ namespace PrivèValidaDownloadApp
                 tre[1] = "Nessun file selezionato";
                 quattro[1] = "";
                 quattro[2] = "";
+                RbNO.IsChecked = false;
+                RbSI.IsChecked = false;
 
                 PaginaPrima();
                 
@@ -106,9 +108,12 @@ namespace PrivèValidaDownloadApp
                
                 if(uno[1] != "Nessun file selezionato" && due[1] != "Nessun file selezionato" && tre[1] != "Nessun file selezionato" && quattro[2] != "")
                 {
-                    string sha256 = (SHA256.SHA256CheckSum(uno[1]));
-                    check256 = SHA256.ControlloValori(sha256, due[1]);
-                    gpg.VerificaChiamataEsterna(due[1], tre[1], quattro[2]);
+                    check256 = SHA256.ControlloValori(uno[1], due[1]);
+                    string errori = gpg.VerificaChiamataEsterna(due[1], tre[1], quattro[2]);
+                    if(errori != "")
+                    {
+                        MessageBox.Show(errori);
+                    }
                     
                     LblImporta.Text = "La firma verificata è corretta?";     
                     RbNO.Visibility = Visibility.Visible;

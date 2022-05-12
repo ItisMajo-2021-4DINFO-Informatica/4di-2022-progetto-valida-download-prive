@@ -13,7 +13,7 @@ namespace PrivèValidaDownloadApp
     class GPG
     {
 
-        public void VerificaChiamataEsterna(string sha, string asc, string finger)
+        public string VerificaChiamataEsterna(string sha, string asc, string finger)
         {
          
 
@@ -41,10 +41,13 @@ namespace PrivèValidaDownloadApp
                     StreamReader streamReader = pProcess.StandardOutput;
                     pProcess.WaitForExit();
                 }
+                
+                return "";
 
             }
             catch (Exception e)
             {
+                return "Errore durante la verifica della firma.";
             }
 
         }

@@ -11,36 +11,48 @@ namespace PrivèValidaDownloadApp
     class sha256
     {
 
-        public bool ControlloValori(string sha, string percorso)
+        public bool ControlloValori(string path, string percorso)
         {
+            string shaCalcolato = SHA256CheckSum(path);
+
             bool uguale = false;
             string shaDaVerificare = "";
 
-
-            using (FileStream flusso = new FileStream(percorso, FileMode.Open, FileAccess.Read))
+            try
             {
-                StreamReader reader = new StreamReader(flusso);
-                while (!reader.EndOfStream)
+                using (FileStream flusso = new FileStream(percorso, FileMode.Open, FileAccess.Read))
                 {
+                    StreamReader reader = new StreamReader(flusso);
+                    while (!reader.EndOfStream)
+                    {
 
-                    string linea = reader.ReadLine();
-                    string[] elementi = linea.Split(' ');
-                    shaDaVerificare = elementi[0];
+                        string linea = reader.ReadLine();
+                        string[] elementi = linea.Split(' ');
+                        shaDaVerificare = elementi[0];
+
+                    }
+
 
                 }
 
-
+                if (shaDaVerificare == shaCalcolato)
+                {
+                    uguale = true;
+                }
+                else
+                {
+                    uguale = false;
+                }
             }
-
-            if(shaDaVerificare == sha)
-            {
-                uguale = true;
-            }
-            else
+            catch(Exception exp)
             {
                 uguale = false;
             }
+
+
             return uguale;
+
+
         }
 
 
@@ -52,9 +64,12 @@ namespace PrivèValidaDownloadApp
             {
                 using (FileStream lettore = File.OpenRead(filePath))
                 {
-                    return (BitConverter.ToString(sHA256.ComputeHash(lettore)).Replace("-", "")).ToLower();
+                    return((BitConverter.ToString(sHA256.ComputeHash(lettore)).Replace("-", "")).ToLower());
                 }
             }
+
+            
+
         }
 
 
