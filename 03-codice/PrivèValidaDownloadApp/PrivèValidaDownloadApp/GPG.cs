@@ -28,7 +28,7 @@ namespace PrivèValidaDownloadApp
                     pProcess.StartInfo.FileName = "cmd.exe";
                     pProcess.StartInfo.Arguments = "/k gpg --recv-keys " + finger ;
                     pProcess.Start();
-                    pProcess.WaitForExit(3000);
+                    pProcess.WaitForExit(1000);
                 }
 
                 using (Process pProcess = new Process())

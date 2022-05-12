@@ -44,7 +44,7 @@ namespace PrivèValidaDownloadApp
                     uguale = false;
                 }
             }
-            catch(Exception exp)
+            catch(Exception)
             {
                 uguale = false;
             }
