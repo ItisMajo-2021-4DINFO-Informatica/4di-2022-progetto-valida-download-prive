@@ -8,4 +8,4 @@ Consulta il [progetto](/02-progetto/README.md).
 
 # Conclusioni
 
-Consulta il [documento di conclusione](/03-conclusione/README.md).
+Consulta il [documento di conclusione](conclusioni.md).
