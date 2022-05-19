@@ -19,4 +19,3 @@
 
 ## 4. *Sviluppi* futuri:
 > Gli sviluppi futuri immaginati dal nostro gruppo per questa applicazione consistono nell'implementazione del controllo gpg direttamante utilizzando c# (senza il bisogna della cmd), in modo da non dover richiedere all'utente l'esito del controllo visualizzato in linea di comando.
-
