@@ -12,7 +12,7 @@
 > ![Interfaccia](Interfaccia.png)
 
 ## 3. *Differenze* del programma rispetto al progetto:
-> Le differenze presenti nel programma realizzato rispetto alla progettazione precedente (consultabile alla seguente pagina) consistono in:
+> Le differenze presenti nel programma realizzato rispetto alla progettazione precedente (consultabile alla seguente [pagina](/02-progetto/README.md).) consistono in:
 > - **Interfaccia:** L'interfaccia realizzata presenta quattro pagine raggiungibili mediante i bottoni "avanti" e "indietro" a differenza dell'unica pagina dichiarata in fase progettuale.
 > - **Finger:** A differenza del progetto dove non era prevista, si è reso necessario richiedere in input all'utente la finger del programma da analizzare, al fine di  ricavare in internet la chiave pubblica corretta.
 
