@@ -8,8 +8,9 @@
 ## 2. *Soluzioni* alle difficoltà:
 > Le soluzioni ai problemi sopra citati sono state le seguenti:
 > - **GPG:** Per l'importazione della chiave pubblica e il seguente controllo della firma digitale del file abbiamo creato due processi che utilizzano la cmd per dare in input i comandi che effettuano tutte le operzioni.
+> ![cmd](/02-progetto/cmd.JPG)
 > - **Output CMD:** Data l'impossibilità di prendere l'output fornito dai controlli in cmd, abbiamo fatto in modo che la scheda cmd rimanesse aperta, facendo visualizzare all'utente l'esito dei controlli, che verrà successivamente inserito a mano una volta chiusa la scheda mediante dei "radio button".
-> ![Interfaccia](Interfaccia.png)
+> ![esito](/02-progetto/esito.JPG)
 
 ## 3. *Differenze* del programma rispetto al progetto:
 > Le differenze presenti nel programma realizzato rispetto alla progettazione precedente (consultabile alla seguente [pagina](/02-progetto/README.md).) consistono in:
