@@ -6,28 +6,16 @@
 > - **Output CMD:** Indirizzare l'output fornito dai comandi in cmd direttamente all'interno dell'applicazione. Non è stato possibile ricavare in output l'esito del comando effettuato in cmd, non permettendo in questo modo il controllo della verifica GPG.
 
 ## 2. *Soluzioni* alle difficoltà:
-> Il lavoro che andremo a svolgere verrà suddiviso principalmente in 3 fasi:
-> - **Fase 1** (Interfaccia wpf): Eseguita da Rughetta Mattia, usufruendo di 2 ore in laboratorio;
-> In questa fase verrà realizzata la pagina che interfaccerà l'utente all'applicazione. Essa conterrà un "OpenFileDialog" per la selezione del file; Tre "TextBox" per l'inserimento dei dati rischiesti; Una "ProgressBar" per verificare l'avanzamento; Un "Button" per l'esecuzione e un "Label" per la stampa del risultato.
-> L'interfaccia avrà il seguente aspetto:
-> 
+> Le soluzioni ai problemi sopra citati sono state le seguenti:
+> - **GPG:** Per l'importazione della chiave pubblica e il seguente controllo della firma digitale del file abbiamo creato due processi che utilizzano la cmd per dare in input i comandi che effettuano tutte le operzioni.
+> - **Output CMD:** Data l'impossibilità di prendere l'output fornito dai controlli in cmd, abbiamo fatto in modo che la scheda cmd rimanesse aperta, facendo visualizzare all'utente l'esito dei controlli, che verrà successivamente inserito a mano una volta chiusa la scheda mediante dei "radio button".
 > ![Interfaccia](Interfaccia.png)
->  
-> - **Fase 2** (Calcolo del cheksum SHA256): Eseguito da Cancemi Gabriele con l'aiuto del gruppo, servendosi di 4 ore in laboratorio;
-> Scriveremo il codice che calcolerà il checksum SHA256 del file che l'utente inserirà in input.  
-> 
-> - **Fase 3** (Controllo della firma digitale): Eseguito da Soudqi Nizar, aiutato dal resto del gruppo, beneficiando di 4 ore in laboratorio;
-> Decifreremo il checksum criptato che l'utente inserirà in input con la chiave pubblica fornita e andremo a confrontare i due codici in modo da ricavare l'eventuale autenticità del file firmato.
-> 
-> - **Fase 4** (Check-up finale del prodotto): Eseguito da tutti i membri del gruppo, in 1 ora di laboratorio.
-> Controlleremo il totale funzionamento dell'applicazione, correggendo eventuali errori. 
-> 
-> Ipoteticamente il lavoro dovrebbe essere completato entro il 06/04/2022.
 
 ## 3. *Differenze* del programma rispetto al progetto:
->
+> Le differenze presenti nel programma realizzato rispetto alla progettazione precedente (consultabile alla seguente pagina) consistono in:
+> - **Interfaccia:** L'interfaccia realizzata presenta quattro pagine raggiungibili mediante i bottoni "avanti" e "indietro" a differenza dell'unica pagina dichiarata in fase progettuale.
+> - **Finger:** A differenza del progetto dove non era prevista, si è reso necessario richiedere in input all'utente la finger del programma da analizzare, al fine di  ricavare in internet la chiave pubblica corretta.
 
-## 3. *Sviluppi* futuri:
-> Per la documentazione del processo di realizzazione utilezzeremo il software "GitHub" e la relativa applicazione "GitHub Desktop", all'interno dei quali andremo a descrivere ogni modifica effettuata al progetto utilizzando i "Commit".
-> Per ogni commit inseriremo un titolo e una sintesi del lavoro svolto, in modo da tener traccia di ogni progresso.
+## 4. *Sviluppi* futuri:
+> Gli sviluppi futuri immaginati dal nostro gruppo per questa applicazione consistono nell'implementazione del controllo gpg direttamante utilizzando c# (senza il bisogna della cmd), in modo da non dover richiedere all'utente l'esito del controllo visualizzato in linea di comando.
 
